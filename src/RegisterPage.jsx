@@ -80,7 +80,7 @@ const RegisterPage = () => {
             <div className="max-w-md md:w-full bg-white p-8 shadow-md rounded-md">
                 {/* Logo */}
                 <div className="flex flex-col items-center justify-center mb-4">
-                        <img src="../public/login_icon.gif" alt="Logo" className="w-28 h-28 rounded-full" />
+                        <img src="/login_icon.gif" alt="Logo" className="w-28 h-28 rounded-full" />
                         <p><b>Register</b></p>
                 </div>
                 {/* Register Form */}
