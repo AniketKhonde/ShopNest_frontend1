@@ -15,9 +15,13 @@ const LandingPage = () => {
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [category, setCategory] = useState('all');
     const [searchQuery, setSearchQuery] = useState('');
+    const [loading, setLoading]=useState("true");
 
     useEffect(() => {
-        fetchProducts();
+        setTimeout(()=>{
+            fetchProducts();
+            setLoading(flase);
+        },3000)
         setIsLoggedIn(checkLoginStatus());
         checkLoginStatus();
     }, []);
@@ -204,11 +208,14 @@ const LandingPage = () => {
             {/* Product Showcase */}
             {/* Product Showcase */}
             <section ref={productSectionRef} className="bg-green-100 py-12">
-                <div className="container mx-auto">
-                    {/* Product Grid */}
-                    <h2 className="text-2xl md:text-4xl font-semibold text-gray-800 mb-6 text-center">Products</h2>
+            <div className="container mx-auto">
+                <h2 className="text-2xl md:text-4xl font-semibold text-gray-800 mb-6 text-center">Products</h2>
+                {loading ? (
+                    <div className="text-center">
+                        <p>Loading...</p>
+                    </div>
+                ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:ml-24 md:mr-24 ml-4 mr-4 ">
-                        {/* Product Cards */}
                         {filteredProducts.length === 0 ? (
                             <div className="text-gray-600">
                                 <div className=''>
@@ -239,8 +246,9 @@ const LandingPage = () => {
                             ))
                         )}
                     </div>
-                </div>
-            </section>
+                )}
+            </div>
+        </section>
 
             {/* Footer */}
             <footer className="bg-gray-800 text-white py-8">
