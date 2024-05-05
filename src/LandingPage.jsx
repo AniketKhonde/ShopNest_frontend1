@@ -220,14 +220,12 @@ const LandingPage = () => {
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:ml-24 md:mr-24 ml-4 mr-4 ">
                         {filteredProducts.length === 0 ? (
-                         <div className="flex justify-center items-center h-full">
-                         <div className="text-center">
-                             <p>No items to show</p>
-                             <div className="mx-auto">
-                                 <img src="/no_toshow.gif" alt="no items" />
-                             </div>
-                         </div>
-                     </div>
+                        <div className="flex justify-center items-center h-full">
+                            <div className="text-center">
+                               <p>No items to show</p>
+                               <img src="/no_toshow.gif" alt="no items" style={{ display: 'block', margin: '0 auto' }} />
+                            </div>
+                        </div>
                         ) : (
                             filteredProducts.map((product, index) => (
                                 <div key={index} className="bg-white rounded-lg shadow-md relative">
