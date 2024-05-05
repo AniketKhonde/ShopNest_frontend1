@@ -19,8 +19,8 @@ const LandingPage = () => {
 
     useEffect(() => {
         setTimeout(()=>{
-            fetchProducts();
             setLoading(flase);
+            fetchProducts();
         },3000)
         setIsLoggedIn(checkLoginStatus());
         checkLoginStatus();
