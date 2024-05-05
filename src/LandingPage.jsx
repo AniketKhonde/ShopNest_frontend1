@@ -220,7 +220,7 @@ const LandingPage = () => {
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:ml-24 md:mr-24 ml-4 mr-4 ">
                         {filteredProducts.length === 0 ? (
-                        <div className="col-span-full md:col-span-2 lg:col-span-4">
+                        <div className="col-span-1 md:col-span-2 lg:col-span-4">
                         <div className="flex justify-center items-center h-full">
                             <div className="text-center">
                                 <p>No items to show</p>
