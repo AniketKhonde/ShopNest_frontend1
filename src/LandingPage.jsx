@@ -21,7 +21,7 @@ const LandingPage = () => {
         setTimeout(()=>{
             setLoading(false);
             fetchProducts();
-        },3000)
+        },4000)
         setIsLoggedIn(checkLoginStatus());
         checkLoginStatus();
     }, []);
@@ -211,20 +211,21 @@ const LandingPage = () => {
             <div className="container mx-auto">
                 <h2 className="text-2xl md:text-4xl font-semibold text-gray-800 mb-6 text-center">Products</h2>
                 {loading ? (
-                    <div className="text-center">
-                        <p>Loading...</p>
-                    </div>
+                 <div className="flex justify-center items-center h-full">
+                     <div className="text-center">
+                         <p>Loading...</p>
+                         <img src="/loading_icon.gif" alt="Loading" />
+                     </div>
+                 </div>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:ml-24 md:mr-24 ml-4 mr-4 ">
                         {filteredProducts.length === 0 ? (
-                            <div className="text-gray-600">
-                                <div className=''>
-                                    <img src="/no_toshow.gif" className='md:h-88' alt="" />
-                                </div>
-                                <h1 className='flex justify-center item-center'>
-                                    <b>No items to show</b>
-                                </h1>
+                         <div className="flex justify-center items-center h-full">
+                            <div className="text-center">
+                                <p>No items to show</p>
+                                <img src="/no_toshow.gif" alt="no items" />
                             </div>
+                        </div>
                         ) : (
                             filteredProducts.map((product, index) => (
                                 <div key={index} className="bg-white rounded-lg shadow-md relative">
