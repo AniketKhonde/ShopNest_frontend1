@@ -15,7 +15,7 @@ const LandingPage = () => {
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [category, setCategory] = useState('all');
     const [searchQuery, setSearchQuery] = useState('');
-    const [loading, setLoading]=useState("true");
+    const [loading, setLoading]=useState(true);
 
     useEffect(() => {
         setTimeout(()=>{
